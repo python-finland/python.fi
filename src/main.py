@@ -47,6 +47,13 @@ class MainPage(PigPage):
         logging.debug("Loading main page")
         self.render_page("main.html")
 
+class AboutPage(PigPage):
+    """
+    """
+    def get(self):
+        self.render_page("about.html")
+
+
 class InEnglishPage(PigPage):
     """
     """
@@ -76,6 +83,7 @@ class NotFound(PigPage):
 
 
 application = webapp.WSGIApplication([
+                                ('/about', AboutPage),                                
                                 ('/english', InEnglishPage),
                                 ('/companies', CompaniesPage),
                                 ('/blogs', BlogsPage),
