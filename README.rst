@@ -7,6 +7,13 @@ All source code is licensed under `BSD license <http://www.opensource.org/licens
 
 Web site template is from http://freehtml5templates.com
 
+Repos
+-----
+
+The official source code repository is 
+
+https://github.com/pig-fi/pigfi
+
 Running development server
 --------------------------
 
