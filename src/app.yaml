@@ -1,4 +1,4 @@
-application: pigfi
+application: pig-fi
 version: 1
 runtime: python
 api_version: 1
@@ -6,10 +6,6 @@ api_version: 1
 handlers:
 - url: /media
   static_dir: media
-
-- url: /favicon.ico
-  static_files: media/images/favicon.ico
-  upload: static/(.*)
 
 - url: /.*
   script: main.py

@@ -13,10 +13,17 @@ Running development server
 Example::
 
     ~/google_appengine/dev_appserver.py src
+
+Deploy
+------
+
+Example::
+        
+    ~/google_appengine/appcfg.py update src
     
 Contact
 -------
 
-Regarding any questions please contact `Mikko <mikko@mfabrik.com>`_ or 
-PIG-fi mailing list <http://groups.google.com/group/pigfi>`_.
+Regarding any questions please contact `Mikko Ohtamaa <mikko@mfabrik.com>`_ or 
+`PIG-fi mailing list <http://groups.google.com/group/pigfi>`_.
     

@@ -26,6 +26,7 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 class PigPage(webapp.RequestHandler):
     """ Base class for page renderer """
     
+
     def render_page(self, template_file_name):
         """ Render a page template from templates folder"""
 
@@ -58,6 +59,12 @@ class CompaniesPage(PigPage):
     def get(self):
         self.render_page("companies.html")
 
+class BlogsPage(PigPage):
+    """
+    """
+    def get(self):
+        self.render_page("blogs.html")
+
 
 class NotFound(PigPage):
     """
@@ -71,6 +78,7 @@ class NotFound(PigPage):
 application = webapp.WSGIApplication([
                                 ('/english', InEnglishPage),
                                 ('/companies', CompaniesPage),
+                                ('/blogs', BlogsPage),
                                 ('/', MainPage),                                
                                 ('/.*', NotFound),
                             ], debug=True)
