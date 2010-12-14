@@ -303,3 +303,8 @@ overflow: hidden;
 .footer-segment#second {
 	text-align: right;
 }
+
+.contact-info p {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}

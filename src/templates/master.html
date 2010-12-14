@@ -35,11 +35,21 @@
                         </li>
 
                         <li>
+                            <a href="/learn">Opiskele</a>
+                        </li>
+
+
+                        <li>
                             <a href="/companies">Yrityksiä</a>
                         </li>
 
                         <li>
-                            <a href="/blogs">Blogit ja Twitter</a>
+                            <a href="/jobs">Työpaikat</a>
+                        </li>
+
+
+                        <li>
+                            <a href="/blogs">Blogit</a>
                         </li>
 
 						
@@ -59,42 +69,43 @@
                 </section>
                 <!-- end of #container -->
                 <aside id="sidebar">
-                    <!-- sidebar -->
-					
-					<h3>Lisätietoja</h3>
-                    <ul>
-                        <li>
-                            <a href="http://groups.google.com/group/pigfi">Keskusteluryhmä</a>
-                        </li>
-
-
-                        <li>
-                            IRC-kanava #python.fi @ IRCNet
-                        </li>
-
-                        <li>
-                            <a href="http://fi.pycon.org/">Pycon Finland 2010 -konferenssi</a>
-                        </li>
-
-                        <li>
-                            <a href="http://www.python.org/community/sigs/">Python interest groups</a>
-                        </li>												
-                    </ul>
-
-                    <h3>Ota yhteyttä</h3>
-                    <ul>
-
-
-                        <li>
-                            <a href="http://groups.google.com/group/pigfi">Keskusteluryhmä</a>
-                        </li>
-
-                        <li>
-                            <a href="mailto:mikko@mfabrik.com">Mikko Ohtamaa</a>
-							(websivusto, yhdistysasiat)
-                        </li>
-                    </ul>
-
+                	{% block sidebar %}
+	                    <!-- sidebar -->
+						
+						<h3>Lisätietoja</h3>
+	                    <ul>
+	                        <li>
+	                            <a href="http://groups.google.com/group/pigfi">Keskusteluryhmä</a>
+	                        </li>
+	
+	
+	                        <li>
+	                            IRC-kanava #python.fi @ IRCNet
+	                        </li>
+	
+	                        <li>
+	                            <a href="http://fi.pycon.org/">Pycon Finland 2010 -konferenssi</a>
+	                        </li>
+	
+	                        <li>
+	                            <a href="http://www.python.org/community/sigs/">Python interest groups</a>
+	                        </li>												
+	                    </ul>
+	
+	                    <h3>Ota yhteyttä</h3>
+	                    <ul>
+	
+	
+	                        <li>
+	                            <a href="http://groups.google.com/group/pigfi">Keskusteluryhmä</a>
+	                        </li>
+	
+	                        <li>
+	                            <a href="mailto:mikko@mfabrik.com">Mikko Ohtamaa</a>
+								(websivusto, yhdistysasiat)
+	                        </li>
+	                    </ul>
+                    {% endblock %}		
 
                 </aside>
                 <!-- end of sidebar -->

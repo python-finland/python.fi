@@ -72,6 +72,18 @@ class BlogsPage(PigPage):
     def get(self):
         self.render_page("blogs.html")
 
+class JobsPage(PigPage):
+    """
+    """
+    def get(self):
+        self.render_page("jobs.html")
+
+class LearnPage(PigPage):
+    """
+    """
+    def get(self):
+        self.render_page("learn.html")
+
 
 class NotFound(PigPage):
     """
@@ -87,7 +99,9 @@ application = webapp.WSGIApplication([
                                 ('/english', InEnglishPage),
                                 ('/companies', CompaniesPage),
                                 ('/blogs', BlogsPage),
-                                ('/', MainPage),                                
+                                ('/jobs', JobsPage),
+                                ('/learn', LearnPage),                                            
+                                ('/', MainPage),                                                              
                                 ('/.*', NotFound),
                             ], debug=True)
 
