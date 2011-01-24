@@ -1,13 +1,13 @@
-body { 
-  color : #000000; 
-  background : #ffffff; 
+body {
+  color : #000000;
+  background : #ffffff;
   font-family : "Times New Roman", Times, serif;
-  font-size : 12pt; 
+  font-size : 12pt;
 }
 
-a { 
-  text-decoration : underline; 
-  color : #0000ff; 
+a {
+  text-decoration : underline;
+  color : #0000ff;
 }
 
 a:link:after, a:visited:after {
@@ -15,6 +15,6 @@ content: " (" attr(href) ") ";
 font-size: 70%;
 }
 
-nav, sidebar, footer, header, aside { 
-  display : none; 
+nav, sidebar, footer, header, aside {
+  display : none;
 }

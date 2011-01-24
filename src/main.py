@@ -25,15 +25,15 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 
 class PigPage(webapp.RequestHandler):
     """ Base class for page renderer """
-    
+
 
     def render_page(self, template_file_name):
         """ Render a page template from templates folder"""
 
-        
+
         # Fill in template parameters
         vars = { }
-       
+
         path = os.path.join(os.path.dirname(__file__), 'templates', template_file_name)
         self.response.out.write(template.render(path, vars))
 
@@ -41,7 +41,7 @@ class MainPage(PigPage):
     """ Index page of the site.
 
     """
-    
+
     def get(self):
 
         logging.debug("Loading main page")
@@ -87,7 +87,7 @@ class LearnPage(PigPage):
 
 class NotFound(PigPage):
     """
-    Handle URIs not found. 
+    Handle URIs not found.
     """
     def get(self):
         self.render_page("404.html")
@@ -95,13 +95,13 @@ class NotFound(PigPage):
 
 
 application = webapp.WSGIApplication([
-                                ('/about', AboutPage),                                
+                                ('/about', AboutPage),
                                 ('/english', InEnglishPage),
                                 ('/companies', CompaniesPage),
                                 ('/blogs', BlogsPage),
                                 ('/jobs', JobsPage),
-                                ('/learn', LearnPage),                                            
-                                ('/', MainPage),                                                              
+                                ('/learn', LearnPage),
+                                ('/', MainPage),
                                 ('/.*', NotFound),
                             ], debug=True)
 
