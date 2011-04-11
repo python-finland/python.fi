@@ -170,6 +170,10 @@ text-decoration: none;
 color: #496998;
 }
 
+nav .menu a.active {
+text-decoration: underline;
+}
+
 nav .menu a:hover {
 text-decoration: underline;
 }
