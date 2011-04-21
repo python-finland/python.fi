@@ -35,8 +35,6 @@ class MainPage(PigPage):
     """Index page of the site"""
 
     def get(self):
-
-        logging.debug("Loading main page")
         self.render_page("main.html")
 
 
