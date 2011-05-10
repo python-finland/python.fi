@@ -1,7 +1,7 @@
 Introduction
 ------------
 
-This is web site source code for Python Interest Group Finland.
+This is web site source code for Python Finland, http://python.fi.
 
 All source code is licensed under `BSD license <http://www.opensource.org/licenses/bsd-license.php>`_.
 
