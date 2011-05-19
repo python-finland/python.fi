@@ -10,7 +10,8 @@ Web site template is from http://freehtml5templates.com
 Repos
 -----
 
-The official source code repository is https://github.com/pig-fi/pigfi.
+The official source code repository is
+https://github.com/python-finland/python.fi.
 
 Running development server
 --------------------------
@@ -29,5 +30,6 @@ Example::
 Contact
 -------
 
-Regarding any questions please contact `Mikko Ohtamaa <mikko@mfabrik.com>`_ or
-`PIG-fi mailing list <http://groups.google.com/group/pigfi>`_.
+Regarding any questions please contact the `board members
+<hallitus@python.fi>`_ of the Python Finland association, or the
+`PIG-Fi mailing list <http://groups.google.com/group/pigfi>`_.

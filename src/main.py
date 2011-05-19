@@ -3,8 +3,8 @@
     Main page views.
 """
 
-__author__ = "Mikko Ohtamaa <mikko@mfabrik.com>"
-__copyright__ = "mFabrik Research Oy"
+__author__ = "Python Finland <hallitus@python.fi>"
+__copyright__ = "Copyright (c) 2011 Python Suomi ry"
 __license__ = "BSD"
 __docformat__ = "epytext"
 
