@@ -37,6 +37,10 @@ class MainPage(PigPage):
     def get(self):
         self.render_page("main.html")
 
+class NewsPage(PigPage):
+    def get(self):
+        self.render_page("news.html")
+
 
 class AboutPage(PigPage):
     def get(self):
@@ -73,9 +77,12 @@ class NotFound(PigPage):
     def get(self):
         self.render_page("404.html")
 
+from proxy import ProxyHandler
 
 application = webapp.WSGIApplication([
     ('/about', AboutPage),
+    ("/proxy", ProxyHandler),
+    ('/news', NewsPage),
     ('/english', InEnglishPage),
     ('/companies', CompaniesPage),
     ('/blogs', BlogsPage),

@@ -304,3 +304,18 @@ overflow: hidden;
 	margin-bottom: 0;
 	padding-bottom: 0;
 }
+
+.minimeFeed,
+.minimeFeed li {
+	list-style: none;
+}
+
+#content .posts,
+#content .minimeFeed {
+	padding-left:0;
+	margin-left: 0;
+}
+
+.minimeFeed > li {
+	margin-bottom: 1em;
+}
