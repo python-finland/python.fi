@@ -306,16 +306,21 @@ overflow: hidden;
 }
 
 .minimeFeed,
-.minimeFeed li {
+.minimeFeed > li {
 	list-style: none;
 }
 
 #content .posts,
 #content .minimeFeed {
-	padding-left:0;
+	padding-left: 0;
 	margin-left: 0;
 }
 
 .minimeFeed > li {
-	margin-bottom: 1em;
+	margin-bottom: 1.5em;
+	padding-left: 0;
+}
+
+.minimeFeedDate {
+	font-size: 10px;
 }

@@ -24,7 +24,7 @@ jQuery.fn.miniFeed = function (feedurl, options, callbackFunc) {
 		notModifiedText: "The source has not changed since the last request",	// Not modified message
 		parserErrorText: "Analytical error"										// XML Parser error message
 	}, options);
-		
+
 		$(this).empty();
 		// feedurl is empty
 		if(!feedurl||feedurl=='') {
@@ -36,51 +36,13 @@ jQuery.fn.miniFeed = function (feedurl, options, callbackFunc) {
 		}
 		top.selected = this;
 		top.setHtml = '';
+		top.items = [];
 		$.ajax({
 			type: "GET",
 			url: feedurl,
 			dataType: "xml",
  			timeout: top.feedOpt.timeout,
 			success: function(xml) {
-				if($(xml).children('rss').length>0) {
-					// RSS feeds
-					if(top.feedOpt.getFeedTitle) {
-						var rssFeedTitle = $(xml).children('rss').children('channel').children('title').text();	
-						top.setHtml += '<h4>'+rssFeedTitle+'</h4>';
-					}
-					top.setHtml += '<ul class="minimeFeed">';
-						top.rsscounter = 0;
-						$(xml).children('rss').children('channel').find('item').each(function() {
-							// items to html
-							top.rsscounter++;
-							top.setHtml += '<li>';
-							if($(this).children('title').length>0&&top.feedOpt.getItemTitle) {
-								var itemTitle = $(this).children('title').text();
-								top.setHtml += '<b>'+itemTitle+'</b>';
-							}
-							top.setHtml += '<div class="minimeFeedContent">';
-							if($(this).children('pubDate').length>0&&top.feedOpt.getItemDate) {
-								var itemDate = $(this).children('pubDate').text();
-					  			top.setHtml += '<div class="minimeFeedDate">'+itemDate+'</div>';
-							}
-							if($(this).children('description').length>0&&top.feedOpt.getItemSummary) {
-								var itemDescription = $(this).children('description').text();
-								top.setHtml += '<div class="minimeFeedText">'+itemDescription+'</div>';
-							}
-							if($(this).children('link').length>0&&top.feedOpt.getItemLink) {
-								var itemLinks = $(this).children('link').text();
-								top.setHtml += '<a href="'+itemLinks+'" target="_blank">'+top.feedOpt.nextLinkText+'</a>';
-							}
-							top.setHtml += '</div>';
-					  		top.setHtml += '</li>';
-					  		// stopped
-					  		if(top.rsscounter==top.feedOpt.limit) {
-					  			return false;
-					  		}
-						});
-						top.setHtml += '</ul>';
-				}
-								
 				if($(xml).children('feed').length>0) {
 					// ATOM feeds
 					if(top.feedOpt.getFeedTitle) {
@@ -89,18 +51,24 @@ jQuery.fn.miniFeed = function (feedurl, options, callbackFunc) {
 					}
 					top.setHtml += '<ul class="minimeFeed">';
 						top.atomcounter = 0;
-						$($(xml).children('feed').children('entry').get().reverse()).each(function() {
+
+						$($(xml).children('feed').children('entry').get()).each(function() {
 							// items to html
+							var html = '';
+
+							var itemDate = $(this).children('published').text();
+							itemDate = itemDate.replace(/T/, ' ');
+							itemDate = itemDate.replace(/\..*/, '');
+
 							top.atomcounter++;
-							top.setHtml += '<li>';
+							html += '<li>';
 							if($(this).children('title').length>0&&top.feedOpt.getItemTitle) {
 								var itemTitle = $(this).children('title').text();
-								top.setHtml += '<b>'+itemTitle+'</b>';
+								html += '<b>'+itemTitle+'</b>';
 							}
-							top.setHtml += '<div class="minimeFeedContent">';
+							html += '<div class="minimeFeedContent">';
 							if($(this).children('updated').length>0&&top.feedOpt.getItemDate) {
-								var itemDate = $(this).children('updated').text();
-								top.setHtml += '<div class="minimeFeedDate">'+itemDate+'</div>';
+								html += '<div class="minimeFeedDate">'+itemDate+'</div>';
 							}
 							if($(this).children('content').length>0&&top.feedOpt.getItemSummary) {
 								// prkl mitä paskaa taas javascriptan kans.
@@ -110,34 +78,47 @@ jQuery.fn.miniFeed = function (feedurl, options, callbackFunc) {
 								var div = document.createElement("div");
 								div.appendChild(itemSummary.get(0).childNodes[0].cloneNode(true));
 								itemSummary = div.innerHTML;
-								top.setHtml += '<div class="minimeFeedText">'+itemSummary+'</div>';
+								html += '<div class="minimeFeedText">'+itemSummary+'</div>';
 							}
 							if($(this).children('description').length>0&&top.feedOpt.getItemDescription) {
 								var itemDescription = $(this).children('description').text();
-								top.setHtml += '<div class="minimeFeedText">'+itemDescription+'</div>';
+								html += '<div class="minimeFeedText">'+itemDescription+'</div>';
 							}
 							if($(this).children('id').length>0&&top.feedOpt.getAtomId) {
 								var atomItemId = $(this).children('id').text();
-								top.setHtml += '<div class="minimeFeedAtomId">'+atomItemId+'</div>';
+								html += '<div class="minimeFeedAtomId">'+atomItemId+'</div>';
 							}
-							
+
 							/*if($(this).children('link').length>0&&top.feedOpt.getItemLink) {
 								var itemLink = $(this).children('link:first').attr('href');
-								top.setHtml += '<a href="'+itemLink+'" target="_blank">'+top.feedOpt.nextLinkText+'</a>';
+								html += '<a href="'+itemLink+'" target="_blank">'+top.feedOpt.nextLinkText+'</a>';
 							}*/
-							
-							top.setHtml += '</div>';
-					  		top.setHtml += '</li>';
+
+							html += '</div>';
+							html += '</li>';
+
+							top.items.push({date: itemDate, html: html});
+
 					  		// stopped
 					  		if(top.atomcounter==top.feedOpt.limit) {
 					  			return false;
 					  		}
 						});
+
+						/* Sort by timestamp in descending order */
+						top.items.sort(function(a, b) {
+							return a.date < b.date ? 1 : a.date == b.date ? 0 : -1;
+						});
+
+						for(var i = 0; i < top.items.length; i++) {
+							top.setHtml += top.items[i].html;
+						}
+
 						top.setHtml += '</ul>';
 				}
 				// wrong xml
 				if($(xml).children('rss').length==0&&$(xml).children('feed').length==0) {
-					top.setHtml +=  top.feedOpt.wrongXmlText;	
+					top.setHtml += top.feedOpt.wrongXmlText;
 				}
 				$(top.selected).append(top.setHtml);
 				if(typeof callbackFunc == 'function'){
@@ -167,5 +148,5 @@ $(document).ready(function() {
 	// Need to pipe through proxy due XSS not allowed in sites.google.com
 	var url = "http://sites.google.com/a/python.fi/tiedotus/tiedotteet/posts.xml";
 	var url = "/proxy?url=" + encodeURI(url);
-	$('.posts').miniFeed(url, { limit: 10, getFeedTitle : false, getItemDate: false, getItemDescription : true});
+	$('.posts').miniFeed(url, {limit: 10, getFeedTitle: false, getItemDate: true, getItemDescription : true});
 });
