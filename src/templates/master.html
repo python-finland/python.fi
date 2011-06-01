@@ -1,161 +1,157 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Python Suomi</title>
-        <link rel="stylesheet" href="media/css/styles.css" type="text/css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="media/css/print.css" media="print" />
-        <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-		<script src="/media/jquery.minime.feed.js"></script>
+  <head>
+    <title>Python Suomi</title>
+    <link rel="stylesheet" href="media/css/styles.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="media/css/print.css" media="print" />
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="/media/jquery.minime.feed.js"></script>
 
-		<link rel="shortcut icon" type="image/png" href="http://fi.pycon.org/media/img/favicon.png">
-		
-		
-    </head>
-    <body>
-        <div id="wrapper">
-            <!-- #wrapper -->
-            <header>
-                <!-- header --><h1><a href="/">Python Suomi</a></h1>
-                <img src="media/images/python-logo.png" alt=""><!-- header image -->
-            </header><!-- end of header -->
+    <link rel="shortcut icon" type="image/png" href="http://fi.pycon.org/media/img/favicon.png">
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- #wrapper -->
+      <header>
+        <!-- header --><h1><a href="/">Python Suomi</a></h1>
+        <img src="media/images/python-logo.png" alt=""><!-- header image -->
+      </header><!-- end of header -->
+      <nav>
+        <!-- top nav -->
+        <div class="menu">
+          <ul>
+            <li>
+              <a href="/">Etusivu</a>
+            </li>
 
-			<nav>
-                <!-- top nav -->
-                <div class="menu">
-                    <ul>
-                        <li>
-                            <a href="/">Etusivu</a>
-                        </li>
-
-						<li>
-                            <a href="/about">Tietoa meistä</a>
-                        </li>
+	    <li>
+              <a href="/about">Tietoa meistä</a>
+            </li>
 
 
-                        <li>
-                            <a href="/english">In English</a>
-                        </li>
+            <li>
+              <a href="/english">In English</a>
+            </li>
 
-                        <li>
-                            <a href="/learn">Opiskele</a>
-                        </li>
-
-
-                        <li>
-                            <a href="/companies">Yrityksiä</a>
-                        </li>
-
-                        <li>
-                            <a href="/jobs">Työpaikat</a>
-                        </li>
+            <li>
+              <a href="/learn">Opiskele</a>
+            </li>
 
 
-                        <li>
-                            <a href="/blogs">Blogit</a>
-                        </li>
+            <li>
+              <a href="/companies">Yrityksiä</a>
+            </li>
+
+            <li>
+              <a href="/jobs">Työpaikat</a>
+            </li>
 
 
-                    </ul>
-                </div>
-            </nav>
-            <!-- end of top nav -->
-            <section id="main">
-                <!-- #main content and sidebar area -->
-                <section id="container">
-                    <!-- #container -->
-                    <section id="content">
-                    	{% block content %}
-						{% endblock %}
-                    </section>
-                    <!-- end of #content -->
-                </section>
-                <!-- end of #container -->
-                <aside id="sidebar">
-                	{% block sidebar %}
-	                    <!-- sidebar -->
-
-						<h3>Lisätietoja</h3>
-	                    <ul>
-	                        <li>
-	                            <a href="http://groups.google.com/group/pigfi">Keskusteluryhmä</a>
-	                        </li>
+            <li>
+              <a href="/blogs">Blogit</a>
+            </li>
 
 
-	                        <li>
-	                            IRC-kanava #python.fi @ IRCNet
-	                        </li>
-
-	                        <li>
-	                            <a href="http://fi.pycon.org/">Pycon Finland 2010 -konferenssi</a>
-	                        </li>
-
-	                        <li>
-	                            <a href="http://www.python.org/community/sigs/">Python interest groups</a>
-	                        </li>
-	                    </ul>
-
-	                    <h3>Ota yhteyttä</h3>
-	                    <ul>
-
-
-	                        <li>
-	                            <a href="http://groups.google.com/group/pigfi">Keskusteluryhmä</a>
-	                        </li>
-
-	                        <li>
-	                            <a href="mailto:mikko@mfabrik.com">Mikko Ohtamaa</a>
-								(websivusto, yhdistysasiat)
-	                        </li>
-	                    </ul>
-                    {% endblock %}
-
-                </aside>
-                <!-- end of sidebar -->
-            </section>
-            <!-- end of #main content and sidebar-->
-            <footer>
-                <section id="footer-area">
-                    <section id="footer-outer-block">
-
-                        <aside id="first" class="footer-segment">
-                                <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" class="footer-image">
-                                	<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
-
-									<p>
-									All content is licensed under a
-									<a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
-                                		Creative Commons Attribution 3.0 Unported License</a>.
-                                    </p>
-
-                        </aside>
-
-                        <!-- end of #first footer segment -->
-                        <aside id="second" class="footer-segment">
-                            <a href="https://github.com/python-finland/python.fi">
-                              Lähdekoodi / Site source
-                            </a>
-                    </section>
-                    <!-- end of #footer-outer-block -->
-                </section>
-                <!-- end of #footer-area -->
-            </footer>
+          </ul>
         </div>
-        <!-- #wrapper -->
+      </nav>
+      <!-- end of top nav -->
+      <section id="main">
+        <!-- #main content and sidebar area -->
+        <section id="container">
+          <!-- #container -->
+          <section id="content">
+            {% block content %}
+	    {% endblock %}
+          </section>
+          <!-- end of #content -->
+        </section>
+        <!-- end of #container -->
+        <aside id="sidebar">
+          {% block sidebar %}
+	  <!-- sidebar -->
+
+	  <h3>Lisätietoja</h3>
+	  <ul>
+	    <li>
+	      <a href="http://groups.google.com/group/pigfi">Keskusteluryhmä</a>
+	    </li>
 
 
-		<script type="text/javascript">
+	    <li>
+	      IRC-kanava #python.fi @ IRCNet
+	    </li>
 
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-20157063-1']);
-		  _gaq.push(['_trackPageview']);
+	    <li>
+	      <a href="http://fi.pycon.org/">Pycon Finland 2010 -konferenssi</a>
+	    </li>
 
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
+	    <li>
+	      <a href="http://www.python.org/community/sigs/">Python interest groups</a>
+	    </li>
+	  </ul>
 
-		</script>
-    </body>
+	  <h3>Ota yhteyttä</h3>
+	  <ul>
+
+
+	    <li>
+	      <a href="http://groups.google.com/group/pigfi">Keskusteluryhmä</a>
+	    </li>
+
+	    <li>
+	      <a href="mailto:mikko@mfabrik.com">Mikko Ohtamaa</a>
+	      (websivusto, yhdistysasiat)
+	    </li>
+	  </ul>
+          {% endblock %}
+
+        </aside>
+        <!-- end of sidebar -->
+      </section>
+      <!-- end of #main content and sidebar-->
+      <footer>
+        <section id="footer-area">
+          <section id="footer-outer-block">
+
+            <aside id="first" class="footer-segment">
+              <a rel="license" href="http://creativecommons.org/licenses/by/3.0/" class="footer-image">
+                <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
+
+	      <p>
+		All content is licensed under a
+		<a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
+                  Creative Commons Attribution 3.0 Unported License</a>.
+              </p>
+
+            </aside>
+
+            <!-- end of #first footer segment -->
+            <aside id="second" class="footer-segment">
+              <a href="https://github.com/python-finland/python.fi">
+                Lähdekoodi / Site source
+              </a>
+            </aside>
+          </section>
+          <!-- end of #footer-outer-block -->
+        </section>
+        <!-- end of #footer-area -->
+      </footer>
+    </div>
+    <!-- #wrapper -->
+
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-20157063-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>
