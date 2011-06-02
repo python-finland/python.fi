@@ -25,7 +25,10 @@ class SimplePage(webapp.RequestHandler):
         templatedir = os.path.join(os.path.dirname(__file__), 'templates')
 
         path = self.request.path.lstrip('/')
-        if path == '' or path.endswith('/'):
+        if '..' in path:
+            # Prevent possible directory climbing
+            path = '_404'
+        elif path == '' or path.endswith('/'):
             path += 'index'
         else:
             head, tail = os.path.split(path)
