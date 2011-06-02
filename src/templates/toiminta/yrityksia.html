@@ -1,11 +1,15 @@
-{% extends "master.html" %}
+{% extends "_base.html" %}
 
 {% block content %}
 <article>
-  <h2>Python-ystävällisiä yrityksiä Suomessa</h2>
+  <h2>Pythonia käyttäviä yrityksiä Suomessa</h2>
 
   <p>
-    Ota yhteyttä, mikäli yrityksenne tai organisaationne haluaa listalle.
+    <a href="#lomake">Täytä
+      lomake</a>, <a href="mailto:hallitus@python.fi">ota yhteyttä</a>
+      tai <a href="https://github.com/python-finland/python.fi">lähetä
+      pull request</a> mikäli yrityksenne tai organisaationne haluaa
+      listalle.
   </p>
 
   <p>
@@ -56,13 +60,21 @@
       <li>
         <a href="https://www.jyu.fi/thk">JYU / Tietohallintokeskus</a>
       </li>
-
-
     </ul>
   </p>
 
   <p>
     (Yritykset on toistaiseksi listattu lisäysjärjestyksessä.)
+  </p>
+
+  <h3 id="lomake">Ilmianna yrityksesi tai organisaatiosi</h3>
+  <p>
+    Allaolevalla lomakkeella voit lisätä yrityksesi tai organisaatiosi
+    listalle. Lomakkeella lähetetyt tiedot käsitellään käsityönä,
+    joten listan päivittäminen saattaa kestää muutaman päivän.
+  </p>
+  <p>
+    <form>(TODO: form)</form>
   </p>
 </article>
 {% endblock %}

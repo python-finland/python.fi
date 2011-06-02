@@ -1,7 +1,6 @@
-{% extends "master.html" %}
+{% extends "_base.html" %}
 
 {% block content %}
-<!-- #content -->
 <h2>Tervetuloa</h2>
 <p>
   Python Suomi on vielä rekisteröitymisvaiheessa oleva yhdistys, joka
@@ -9,7 +8,7 @@
   alan ihmisten keskinäistä yhteistyötä ja verkostoitumista.
 </p>
 
-<h2>Uutisia</h2>
+<h2>Uutiset</h2>
 
 <article>
   <h3>Yhdistys perustettu</h3>
@@ -28,5 +27,40 @@
 <h2>Tiedotteet</h2>
 
 <ul class="posts"></ul>
+{% endblock %}
 
+{% block sidebar %}
+<h3>Lisätietoja</h3>
+<ul>
+  <li>
+    <a href="http://groups.google.com/group/pigfi">Keskusteluryhmä</a>
+  </li>
+
+
+  <li>
+    IRC-kanava #python.fi @ IRCNet
+  </li>
+
+  <li>
+    <a href="http://fi.pycon.org/">Pycon Finland 2010 -konferenssi</a>
+  </li>
+
+  <li>
+    <a href="http://www.python.org/community/sigs/">Python interest groups</a>
+  </li>
+</ul>
+
+<h3>Ota yhteyttä</h3>
+<ul>
+
+
+  <li>
+    <a href="http://groups.google.com/group/pigfi">Keskusteluryhmä</a>
+  </li>
+
+  <li>
+    <a href="mailto:mikko@mfabrik.com">Mikko Ohtamaa</a>
+    (websivusto, yhdistysasiat)
+  </li>
+</ul>
 {% endblock %}

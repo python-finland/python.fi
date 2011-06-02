@@ -1,0 +1,77 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<article>
+  <h2>Jäsenyys</h2>
+
+  <h3>Liity jäseneksi</h3>
+  <p>
+    Tällä lomakkeella voit liittyä yhdistyksen varsinaiseksi
+    jäseneksi. Varsinaisilta jäseniltä ei peritä jäsenmaksua.
+  </p>
+  <p>
+    <form action="https://spreadsheets.google.com/spreadsheet/formResponse?formkey=dHdKc2F6eEJ0dnlpb0VZYXY5ZWVuV3c6MQ&amp;theme=0AX42CRMsmRFbUy03NTAzM2Q4My03ODU1LTQ2NzItODI2YS1kZmU5YzdiMzZjOGQ&amp;embedded=true&amp;ifq" method="POST" id="ss-form">
+      <table>
+        <tr>
+          <td>
+            <label for="entry_0">
+              Nimi
+              <span class="required">*</span>
+            </label>
+          </td>
+          <td>
+            <input type="text" name="entry.0.single" value="" class="ss-q-short" id="entry_0">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="entry_4">
+              Sähköposti
+              <span class="req">*</span>
+            </label>
+          </td>
+          <td>
+            <input type="text" name="entry.4.single" value="" class="ss-q-short" id="entry_4">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="entry_6">Kotikunta <span class="req">*</span></label>
+          </td>
+          <td>
+            <input type="text" name="entry.6.single" value="" class="ss-q-short" id="entry_6">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="hidden" name="pageNumber" value="0">
+            <input type="hidden" name="backupCache" value="">
+            <input type="submit" name="submit" value="Lähetä">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </p>
+  <p>
+    Hallitus hyväksyy uudet jäsenet seuraavassa kokouksessaan. Kun
+    jäsenyytesi on hyväksytty, sinuun ollaan yhteydessä sähköpostitse.
+  </p>
+
+  <h3>Liity kannatusjäseneksi</h3>
+  <p>
+    Yritykset ja henkilöt, jotka haluavat tukea yhdistyksen toimintaa
+    rahallisesti, voivat liittyä kannatusjäseneksi. Kannatusjäsenten
+    jäsenmaksu on 150€ vuodessa.
+  </p>
+  <p>
+    <form>
+      (TODO: form)
+    </form>
+  </p>
+  <p>
+    Kuten varsinaisten jäsentenkin kohdalla, hallitus hyväksyy myös
+    kannatusjäsenet seuraavassa kokouksessaan. Hyväksyttyihin jäseniin
+    ollaan yhteydessä sähköpostitse.
+  </p>
+</article>
+{% endblock %}

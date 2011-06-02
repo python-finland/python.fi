@@ -17,79 +17,40 @@ from google.appengine.ext.webapp import template
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 
-
-class PigPage(webapp.RequestHandler):
-    """Base class for page renderer"""
-
-    def render_page(self, template_file_name):
-        """ Render a page template from templates folder"""
-
-        # Fill in template parameters
-        vars = {}
-
-        path = os.path.join(os.path.dirname(__file__), 'templates', template_file_name)
-        self.response.out.write(template.render(path, vars))
-
-
-class MainPage(PigPage):
-    """Index page of the site"""
-
-    def get(self):
-        self.render_page("main.html")
-
-class NewsPage(PigPage):
-    def get(self):
-        self.render_page("news.html")
-
-
-class AboutPage(PigPage):
-    def get(self):
-        self.render_page("about.html")
-
-
-class InEnglishPage(PigPage):
-    def get(self):
-        self.render_page("english.html")
-
-
-class CompaniesPage(PigPage):
-    def get(self):
-        self.render_page("companies.html")
-
-
-class BlogsPage(PigPage):
-    def get(self):
-        self.render_page("blogs.html")
-
-
-class JobsPage(PigPage):
-    def get(self):
-        self.render_page("jobs.html")
-
-
-class LearnPage(PigPage):
-    def get(self):
-        self.render_page("learn.html")
-
-
-class NotFound(PigPage):
-    """Handle URIs not found"""
-    def get(self):
-        self.render_page("404.html")
-
 from proxy import ProxyHandler
 
+
+class SimplePage(webapp.RequestHandler):
+    def get(self):
+        templatedir = os.path.join(os.path.dirname(__file__), 'templates')
+
+        path = self.request.path.lstrip('/')
+        if path == '' or path.endswith('/'):
+            path += 'index'
+        else:
+            head, tail = os.path.split(path)
+            if tail.startswith('_'):
+                path = '_404'
+
+        if not os.path.isfile(os.path.join(templatedir, path + '.html')):
+            if os.path.isfile(os.path.join(templatedir, path, 'index.html')):
+                self.redirect(path + '/')
+                return
+
+        path += '.html'
+
+        if not os.path.isfile(os.path.join(templatedir, path)):
+            path = '_404.html'
+
+        self.response.out.write(template.render(
+            os.path.join(templatedir, path),
+            {}
+        ))
+
+
 application = webapp.WSGIApplication([
-    ('/about', AboutPage),
-    ("/proxy", ProxyHandler),
-    ('/news', NewsPage),
-    ('/english', InEnglishPage),
-    ('/companies', CompaniesPage),
-    ('/blogs', BlogsPage),
-    ('/jobs', JobsPage),
-    ('/learn', LearnPage),
-    ('/', MainPage),
-    ('/.*', NotFound),
+    ('/proxy', ProxyHandler),
+    ('/.*', SimplePage),
 ], debug=True)
 
 

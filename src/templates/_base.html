@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <title>Python Suomi</title>
-    <link rel="stylesheet" href="media/css/styles.css" type="text/css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="media/css/print.css" media="print" />
+    <link rel="stylesheet" href="/media/css/styles.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/media/css/form.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/media/css/print.css" media="print" />
     <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     <script src="/media/jquery.minime.feed.js"></script>
@@ -15,7 +16,7 @@
       <!-- #wrapper -->
       <header>
         <!-- header --><h1><a href="/">Python Suomi</a></h1>
-        <img src="media/images/python-logo.png" alt=""><!-- header image -->
+        <img src="/media/images/python-logo.png" alt=""><!-- header image -->
       </header><!-- end of header -->
       <nav>
         <!-- top nav -->
@@ -26,33 +27,16 @@
             </li>
 
 	    <li>
-              <a href="/about">Tietoa meistä</a>
+              <a href="/yhdistys">Yhdistys</a>
             </li>
 
+            <li>
+              <a href="/toiminta">Toiminta</a>
+            </li>
 
             <li>
               <a href="/english">In English</a>
             </li>
-
-            <li>
-              <a href="/learn">Opiskele</a>
-            </li>
-
-
-            <li>
-              <a href="/companies">Yrityksiä</a>
-            </li>
-
-            <li>
-              <a href="/jobs">Työpaikat</a>
-            </li>
-
-
-            <li>
-              <a href="/blogs">Blogit</a>
-            </li>
-
-
           </ul>
         </div>
       </nav>
@@ -70,43 +54,7 @@
         <!-- end of #container -->
         <aside id="sidebar">
           {% block sidebar %}
-	  <!-- sidebar -->
-
-	  <h3>Lisätietoja</h3>
-	  <ul>
-	    <li>
-	      <a href="http://groups.google.com/group/pigfi">Keskusteluryhmä</a>
-	    </li>
-
-
-	    <li>
-	      IRC-kanava #python.fi @ IRCNet
-	    </li>
-
-	    <li>
-	      <a href="http://fi.pycon.org/">Pycon Finland 2010 -konferenssi</a>
-	    </li>
-
-	    <li>
-	      <a href="http://www.python.org/community/sigs/">Python interest groups</a>
-	    </li>
-	  </ul>
-
-	  <h3>Ota yhteyttä</h3>
-	  <ul>
-
-
-	    <li>
-	      <a href="http://groups.google.com/group/pigfi">Keskusteluryhmä</a>
-	    </li>
-
-	    <li>
-	      <a href="mailto:mikko@mfabrik.com">Mikko Ohtamaa</a>
-	      (websivusto, yhdistysasiat)
-	    </li>
-	  </ul>
           {% endblock %}
-
         </aside>
         <!-- end of sidebar -->
       </section>
