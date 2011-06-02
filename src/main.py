@@ -34,8 +34,7 @@ class SimplePage(webapp.RequestHandler):
 
         if not os.path.isfile(os.path.join(templatedir, path + '.html')):
             if os.path.isfile(os.path.join(templatedir, path, 'index.html')):
-                self.redirect(path + '/')
-                return
+                path += '/index'
 
         path += '.html'
 
