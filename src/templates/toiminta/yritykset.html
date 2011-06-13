@@ -1,5 +1,9 @@
 {% extends "_base.html" %}
 
+{% block head %}
+<link rel="stylesheet" href="/media/css/form.css" type="text/css" media="screen" />
+{% endblock %}
+
 {% block content %}
 <article>
   <h2>Pythonia käyttäviä yrityksiä Suomessa</h2>
@@ -71,10 +75,44 @@
   <p>
     Allaolevalla lomakkeella voit lisätä yrityksesi tai organisaatiosi
     listalle. Lomakkeella lähetetyt tiedot käsitellään käsityönä,
-    joten listan päivittäminen saattaa kestää muutaman päivän.
+    joten listan päivittäminen saattaa kestää jonkin aikaa.
   </p>
   <p>
-    <form>(TODO: form)</form>
+    Tähdellä merkityt kohdat ovat pakollisia.
+  </p>
+  <p>
+    <form action="https://spreadsheets.google.com/a/python.fi/spreadsheet/formResponse?formkey=dG9kTHFRcGFobi1BcHFjQVNqMS1Sanc6MQ&amp;embedded=true&amp;ifq" method="POST">
+      <table>
+        <tr>
+          <td>
+            <label for="yritys_0">
+              Yrityksen nimi
+              <span class="required">*</span>
+            </label>
+          </td>
+          <td>
+            <input type="text" name="entry.0.single" value="" class="ss-q-short" id="yritys_0" size="30">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="yritys_1">
+              Linkki
+            </label>
+          </td>
+          <td>
+            <input type="text" name="entry.1.single" value="" class="ss-q-short" id="yritys_1" size="50">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="hidden" name="pageNumber" value="0">
+            <input type="hidden" name="backupCache" value="">
+            <input type="submit" name="submit" value="Lähetä">
+          </td>
+        </tr>
+      </table>
+    </form>
   </p>
 </article>
 {% endblock %}
