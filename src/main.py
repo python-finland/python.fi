@@ -19,6 +19,11 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 
 from proxy import ProxyHandler
 
+if os.environ.get('SERVER_SOFTWARE', '').startswith('Dev'):
+    BASE_URL = 'http://localhost:8080/'
+else:
+    BASE_URL = 'http://python.fi/'
+
 
 class SimplePage(webapp.RequestHandler):
     def get(self):
@@ -28,12 +33,17 @@ class SimplePage(webapp.RequestHandler):
         if '..' in path:
             # Prevent possible directory climbing
             path = '_404'
-        elif path == '' or path.endswith('/'):
+        elif path == '':
             path += 'index'
+        elif not path.endswith('/'):
+            self.redirect(BASE_URL + path + '/')
+            return
         else:
             head, tail = os.path.split(path)
             if tail.startswith('_'):
                 path = '_404'
+
+        path = path.rstrip('/')
 
         if not os.path.isfile(os.path.join(templatedir, path + '.html')):
             if os.path.isfile(os.path.join(templatedir, path, 'index.html')):
