@@ -61,7 +61,7 @@ padding: 0 20px;
 
 .footer-segment {
 float: left;
-width: 50%;
+width: 40%;
 }
 
 #fourth {
@@ -276,6 +276,11 @@ border-top: 4px solid #ddd;
 margin-top: -4px;
 padding: 18px 0;
 overflow: hidden;
+background: white;
+}
+
+#kannarit {
+   padding: 5px;   
 }
 
 #content ul {
@@ -296,8 +301,18 @@ overflow: hidden;
 	margin-right: 10px;
 }
 
+.footer-segment {
+   padding: 5px;   
+   font-size: 80%;
+}
+
+.footer-segment#first {
+   padding-left: 15px;
+}
+
 .footer-segment#second {
 	text-align: right;
+	float: right;
 }
 
 .contact-info p {
