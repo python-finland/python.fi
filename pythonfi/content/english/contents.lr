@@ -1,3 +1,5 @@
 _model: page
 ---
 head: English
+---
+_template: english.html
