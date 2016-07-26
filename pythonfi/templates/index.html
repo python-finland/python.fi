@@ -1,0 +1,59 @@
+{% extends "_base.html" %}
+
+{% block head %}
+<script src="/media/jquery.minime.feed.js"></script>
+{% endblock %}
+
+{% block content %}
+<h2>Tervetuloa</h2>
+<p>
+  Python Suomi ry on yhdistys, joka parantaa Python-ohjelmointikielen
+  tuntemusta Suomessa sekä edistää alan ihmisten keskinäistä
+  yhteistyötä ja verkostoitumista.
+</p>
+
+<h2>Tiedotteet</h2>
+
+<ul class="posts"></ul>
+{% endblock %}
+
+{% block sidebar %}
+<h3>Keskustele</h3>
+<ul>
+  <li>
+    <a href="http://groups.google.com/group/pigfi">Keskusteluryhmä</a>
+  </li>
+  <li>
+    <a href="http://twitter.com/PythonFinland">@PythonFinland</a> Twitterissä
+  </li>
+  <li>
+    <a href="http://www.facebook.com/pages/Python-Suomi-ry/216300785055723">Facebook-ryhmä</a>
+  </li>
+  <li>
+    IRC-kanava #python.fi @ IRCNet
+  </li>
+  <li>
+    <a href="/yhdistys/hallitus/">Ota yhteyttä hallitukseen</a>
+  </li>
+</ul>
+
+<h3>Toimintaa</h3>
+<ul>
+  <li>
+    <a href="/yhdistys/jasenyys/">Liity jäseneksi</a>
+  </li>
+  <li>
+    <a href="http://fi.pycon.org/">PyCon Finland</a> -konferenssi
+  </li>
+  <li>
+    <a href="/toiminta/yritykset/">Yrityksiä</a>
+  </li>
+  <li>
+    <a href="/toiminta/blogit/">Blogeja</a>
+  </li>
+</ul>
+
+<iframe src="http://www.facebook.com/plugins/likebox.php?id=216300785055723&amp;width=280&amp;colorscheme=light&amp;show_faces=true&amp;stream=false&amp;header=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:280px; height: 360px" allowTransparency="true"></iframe>
+
+
+{% endblock %}

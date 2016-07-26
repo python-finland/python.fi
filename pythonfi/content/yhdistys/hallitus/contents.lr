@@ -1,0 +1,5 @@
+_model: page
+---
+head: hallitus
+---
+_template: hallitus.html
