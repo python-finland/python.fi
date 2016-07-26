@@ -13,19 +13,32 @@ Repos
 The official source code repository is
 https://github.com/python-finland/python.fi.
 
+Getting started
+---------------
+
+Commands::
+
+    git clone git@github.com:python-finland/python.fi.git
+    cd python.fi
+    virtualenv venv
+    venv/bin/pip install Lektor
+
 Running development server
 --------------------------
 
 Example::
 
-    ~/google_appengine/dev_appserver.py src
+    cd python.fi/pythonfi
+    ../venv/bin/lektor server
 
 Deploy
 ------
 
 Example::
 
-    ~/google_appengine/appcfg.py update src
+    cd python.fi/pythonfi
+    ../venv/bin/lektor build --output-path output
+    scp -r output python.fi:python.fi
 
 Contact
 -------

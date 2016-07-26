@@ -1,7 +1,0 @@
-form td, form input[type=submit] {
-    padding: 3px;
-}
-
-form tr:last-child {
-    text-align: center;
-}
