@@ -51,3 +51,5 @@ docs/apidocs/*
 *.debug.css
 
 
+pythonfi/output
+venv
